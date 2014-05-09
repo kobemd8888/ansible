@@ -1,0 +1,25 @@
+---
+- name: Install Git 1.7.1
+  yum: name=git state=present
+  
+- name: Install Tomcat 7.0.33
+  yum: name=tomcat state=present
+  
+- name: Configure Tomcat server
+  template: src=server.xml.j2 dest=/usr/share/tomcat/conf/server.xml
+  notify: restart tomcat
+#
+#- name: Install Tomcat init script
+#  copy: src=tomcat-initscript.sh dest=/etc/init.d/tomcat mode=0755
+#  sudo: yes
+#  
+#- name: Start Tomcat
+#  service: name=tomcat state=restarted enabled=yes
+#  
+#- name: deploy iptables rules
+#  template: src=iptables-save dest=/etc/sysconfig/iptables
+#  notify: restart iptables
+#  sudo: yes
+#  
+#- name: wait for tomcat to start
+#  wait_for: port=8080

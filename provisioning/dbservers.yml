@@ -1,0 +1,8 @@
+---
+# file: dbservers.yml
+- hosts: dbservers
+  remote_user: vagrant
+  sudo: yes
+  roles:
+    - common
+    - webtier
