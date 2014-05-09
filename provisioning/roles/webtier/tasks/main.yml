@@ -9,7 +9,7 @@
   group: name=tomcat
 
 - name: add user "tomcat"
-  user: name=tomcat group=tomcat home=/usr/share/tomcat
+  user: name=tomcat group=tomcat
 
 - name: Change ownership of Tomcat installation
   file: path=/usr/share/tomcat/ mode=0755 owner=tomcat group=tomcat state=directory recurse=yes
