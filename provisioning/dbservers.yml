@@ -1,7 +1,7 @@
 ---
 # file: dbservers.yml
 - hosts: dbservers
-  remote_user: vagrant
+  user: root
   sudo: yes
   roles:
     - common

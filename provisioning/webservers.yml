@@ -1,7 +1,7 @@
 ---
 # file: webservers.yml
 - hosts: webservers
-  remote_user: vagrant
+  user: root
   sudo: yes
   roles:
     - common

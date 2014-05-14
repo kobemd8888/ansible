@@ -114,7 +114,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "provisioning/site.yml"
-      ansible.inventory_path = "provisioning/dev"
+      ansible.inventory_path = "provisioning/ec2"
     end
   
   # If you're using the Opscode platform, your validator client is
